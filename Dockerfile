@@ -8,8 +8,6 @@ RUN apt-get install -y php7.2 libapache2-mod-php7.2
 RUN apt-get install -y php7.2-ldap php7.2-zip php7.2-gd php7.2-dom php7.2-mbstring php7.2-mysql php7.2-curl
 RUN apt-get install -y composer
 RUN apt-get install -y wget
-RUN phpenmod mcrypt
-RUN phpenmod openssl
 RUN phpenmod mbstring
 RUN phpenmod dom
 RUN phpenmod gd
@@ -34,5 +32,6 @@ env APACHE_PID_FILE     /var/run/apache2.pid
 env APACHE_RUN_DIR      /var/run/apache2
 env APACHE_LOCK_DIR     /var/lock/apache2
 env APACHE_LOG_DIR      /var/log/apache2
+WORKDIR /var/www/html
 EXPOSE 80
 ENTRYPOINT [ "/usr/sbin/apache2", "-DFOREGROUND" ]
