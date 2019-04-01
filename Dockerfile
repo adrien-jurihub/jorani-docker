@@ -5,7 +5,7 @@ RUN ln -fs /usr/share/zoneinfo/Europe/Paris /etc/localtime
 RUN dpkg-reconfigure --frontend noninteractive tzdata
 RUN apt-get install -y unzip apache2 apache2-utils
 RUN apt-get install -y php7.2 libapache2-mod-php7.2
-RUN apt-get install -y php7.2-ldap php7.2-zip php7.2-gd php7.2-dom php7.2-mbstring php7.2-mysql php7.2-curl
+RUN apt-get install -y php7.2-ldap php7.2-zip php7.2-gd php7.2-dom php7.2-mbstring php7.2-mysql
 RUN apt-get install -y composer
 RUN apt-get install -y wget
 RUN phpenmod mcrypt
@@ -14,7 +14,6 @@ RUN phpenmod mbstring
 RUN phpenmod dom
 RUN phpenmod gd
 RUN phpenmod zip
-RUN phpenmod curl
 RUN wget -O jorani.tar.gz https://github.com/bbalet/jorani/archive/master.tar.gz
 RUN rm -Rf /var/www/html
 RUN tar zxvf jorani.tar.gz
