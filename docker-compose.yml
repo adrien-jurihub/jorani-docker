@@ -2,7 +2,7 @@ jorani:
   build: .
   dockerfile: Dockerfile
   ports:
-   - "8080:80"
+   - "8084:80"
   links:
    - mysql
   environment:
@@ -17,9 +17,9 @@ jorani:
     - SMTP_CRYPTO=tls
 
 mysql:
-  image: mysql:5.5
+  image: mysql:5.7
   environment:
     - MYSQL_ROOT_PASSWORD=password
     - MYSQL_DATABASE=lms
   volumes:
-    - lms.sql:/docker-entrypoint-initdb.d/lms.sql
+    - ./lms.sql:/docker-entrypoint-initdb.d/lms.sql
