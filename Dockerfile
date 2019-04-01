@@ -24,6 +24,7 @@ COPY database.php /var/www/html/application/config/database.php
 COPY email.php /var/www/html/application/config/email.php
 RUN sed -i "s^\['sess_driver'\] = 'database'^\['sess_driver'\] = 'files'^g" /var/www/html/application/config/config.php
 RUN sed -i "s^\['sess_save_path'\] = ''^\['sess_save_path'\] = '/tmp/sess'^g" /var/www/html/application/config/config.php
+RUN composer global require hirak/prestissimo
 # Configure Apache2
 ENV APACHE_RUN_USER     www-data
 ENV APACHE_RUN_GROUP    www-data
