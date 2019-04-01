@@ -1,6 +1,9 @@
 # jorani-docker
 Docker for [Jorani](https://github.com/bbalet/jorani) (Leave Management System)
+Images and binaries set to "latest" whenever possible.
 
-You can either:
-- run Jorani and mysql altogether with docker-compose: `make`
-- run Jorani by itself and point to an existing database `docker build -t jorani:latest . && docker run -d -p 8080:80 -e MYSQL_HOST=localhost -e MYSQL_USER=root -e MYSQL_PASSWORD=password -e MYSQL_DATABASE=lms jorani:latest`
+1. Clone repo
+2. Build: `docker-compose build`
+3. Install vendors: `docker exec -ti jorani_jorani_1 sh -c "cd /var/www/html; composer install"`
+
+Enjoy Jorani on localhost:8084
