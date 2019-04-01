@@ -6,7 +6,7 @@ jorani:
   links:
    - mysql
   environment:
-    - MYSQL_HOST=jorani_mysql_1
+    - MYSQL_HOST=mysql
     - MYSQL_USER=root
     - MYSQL_PASSWORD=password
     - MYSQL_DATABASE=lms
